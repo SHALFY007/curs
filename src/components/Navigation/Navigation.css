@@ -1,0 +1,12 @@
+.navigation {
+    width: 334px;
+    height: 54px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 30px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    margin-top: 71px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 0 30px;
+}
