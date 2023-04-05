@@ -1,0 +1,41 @@
+.navslide {
+    height: 100%;
+    position: fixed;
+    width: 270px;
+    background-color: #007155;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 58px;
+    box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.25);
+}
+
+.navslide-img {
+    width: 146px;
+    height: 146px;
+    border-radius: 50%;
+}
+
+.navslide-block {
+    margin-top: 76px;
+    width: 70%;
+}
+
+.navslide-block-mini {
+    display: flex;
+    align-items: center;
+}
+
+.navslide-link {
+    width: 54px;
+}
+
+.navslide-header {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    
+    color: #FFFFFF;
+}
