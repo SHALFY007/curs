@@ -10,8 +10,8 @@ import Navigation from '../Navigation/Navigation'
 function Blog() {
 
     const dispatch = useDispatch()
-    const [layout, setLayout] = useState()
-    const news = useSelector(store => store.news)
+    const [layout, setLayout] = useState() //Верстка
+    const news = useSelector(store => store.news) // Получение новостей из стора
     const [select, setSelect] = useState()
     const defaultRef = useRef(null)
     const blockRef = useRef(null)
@@ -22,7 +22,7 @@ function Blog() {
     let selectId = 1
 
     const activate = (e) => {
-        e.currentTarget.classList.toggle('favourite-active')
+        e.currentTarget.classList.toggle('favourite-active') //Меняет флажок избранного
     }
 
     const open = () => {
@@ -35,13 +35,13 @@ function Blog() {
         document.querySelector('.modal-update').style.display = 'block'
     }
 
-    const createLayout = (data, cl=false) => {
+    const createLayout = (data, cl=false) => { //Создает верстку
         let classN;
         isFavourite ? classN="new-block-favourite favourite-active" : classN="new-block-favourite"
         if (cl) {
             classN="new-block-favourite"
         }
-        const newL = data.map( a => {
+        const newL = data.map( a => { //Создает массив из полученного
             return <div className="news-block" id={a.id} key={a.id} onClick={setSelected}>
                 <div className="new-img-block">
                     <img src={a.img} alt="photo" className="new-img"/>
@@ -82,10 +82,10 @@ function Blog() {
     }
 
     const deleteNew = () => {
-        dispatch({type: "REMOVE_NEWS", payload: selectId})
+        dispatch({type: "REMOVE_NEWS", payload: selectId}) //Удаляет новость
     }
 
-    const createSelected = (obj) => {
+    const createSelected = (obj) => { //Создает верстку для выбранной новости
 
         let layout =  <div className="blog-news-select" ref={blockRef}>
                 <img src={obj.img} alt="img"/>
@@ -96,7 +96,6 @@ function Blog() {
                 color="error"
                 onClick={deleteNew}>DELETE</Button>
                 </div>
-                console.log(layout)
         setSelect(layout)
     }
 
@@ -110,11 +109,9 @@ function Blog() {
 
     }
 
-    const changeTitle = (e) => {
+    const changeTitle = (e) => { //Поиск
         let title = e.target.value
         let arr = []
-
-        console.log(search)
 
         search.forEach(el => {
             if (el) {
@@ -124,12 +121,8 @@ function Blog() {
 
         let filtered;
         
-        console.log(arr)
-
-        console.log(isFavourite)
 
         isFavourite ?  filtered = arr.filter(el => el[0].title.startsWith(title)) : filtered =  news.news.filter(el => el.title.startsWith(title))
-        console.log(filtered)
         if (isFavourite) {
             filtered = filtered.map((el) => {
                 return el[0]
@@ -139,7 +132,7 @@ function Blog() {
         
     }
 
-    const resultChange = (e) => {
+    const resultChange = (e) => { //Отображение только выбранных новостей
         let els = defaultRef.current.querySelectorAll('.new-block-favourite')
 
         if(e.target.checked) {
@@ -165,7 +158,7 @@ function Blog() {
 
     useEffect(() => {
         createLayout(news.news)
-    }, [news])
+    }, [news]) //Динамическая подгрузка новостей из стора
 
     useEffect(() => {
         let obj = news.news[0]

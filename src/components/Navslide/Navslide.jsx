@@ -19,7 +19,7 @@ function Navslide() {
                 </h3>
                 </div>
                 <div className="navslide-block-mini">
-                    <Link to="/">
+                    <Link to="/insight">
                     <svg className='navslide-link links' width="24" height="20" viewBox="0 0 24 20" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.75 7.5L16.935 4.92L19.5 3.75L16.935 2.58L15.75 0L14.61 2.58L12 3.75L14.61 4.92L15.75 7.5Z"/>
                         <path d="M3 10.5L3.6 8.1L6 7.5L3.6 6.9L3 4.5L2.4 6.9L0 7.5L2.4 8.1L3 10.5Z" />

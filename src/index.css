@@ -3,6 +3,15 @@
   src: url('../public/fonts/Roboto-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('../public/fonts/Inter-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('../public/fonts/Manrope-Regular.ttf');
+}
 
 * {
   box-sizing: border-box;
