@@ -8,6 +8,7 @@ function Routers() {
         <Routes>
             <Route path="/" element={<Main />}></Route>
             <Route path="/blog" element={<Blog />}></Route>
+            <Route path="/insight"></Route>
         </Routes>
     )
 }

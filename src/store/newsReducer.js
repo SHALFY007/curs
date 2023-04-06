@@ -43,8 +43,13 @@ export const newsReducer = (state=defaultState, action) => {
     
     switch (action.type) {
         case "ADD_NEWS":
-            
-            break;
+            return {...state, news: [...state.news, action.payload]}
+
+        case "UPDATE_NEWS":
+            return {...state, news: [...state.news.filter(el => el.id != action.payload.id ), action.payload.edit], }
+
+        case "REMOVE_NEWS":
+            return {...state, news: [...state.news.filter(el => el.id != action.payload )]}
     
         default:
             return state

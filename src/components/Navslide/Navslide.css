@@ -39,3 +39,9 @@
     
     color: #FFFFFF;
 }
+
+@media (max-width: 1447px) {
+    .navslide {
+        display: none;
+    }
+}
